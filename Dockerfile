@@ -8,6 +8,9 @@ COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
 RUN ./mvnw dependency:go-offline
 
+ENV URL_BANCO jdbc:h2:file:~/gerenciador;AUTO_SERVER=TRUE
+ENV USUARIO senha_bd
+
 COPY src ./src
 
 CMD ["./mvnw", "spring-boot:run"]

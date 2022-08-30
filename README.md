@@ -1,19 +1,6 @@
 # Gerenciador de Pessoas
 
 
-# Perguntas do desafio
-
-Qualidade de código
-
-
-    1. Durante a implementação de uma nova funcionalidade de software solicitada, quais critérios você avalia e implementa para garantia de qualidade de software?
-       Como júnior vou avaliar  os requisitos passados e vou procurar seguir os padrões da comunidade de desenvolvimento e da empresa, já que este foram testados e aprovados.
-
-
-    2. Em qual etapa da implementação você considera a qualidade de software?
-       Em todas as etapas, hoje é inimaginável pensar em desenvolvimento de  software sem processos que visão a qualidade do mesmo.
-
-
 
 # Descrição
 
@@ -34,13 +21,17 @@ Como desafio me foi proposto este projeto de backend usando as seguintes tecnolo
 Para evoluir no aprendizado no back inclui as seguintes tecnologias:
 
 
-- Relatórios(2)
+- Docker
 - JasperReport
+
 
 No front crie uma aplicação simples em angular para consumir os meus serviços (O foco neste projeto é o backend, mas aprender nunca é demais)
 
 
-Link do front :
+Link do front :  https://rogerfreitas27.github.io/gerenciador-frontend/
+
+
+Link do código do front: 
 
 Nesta api pude trabalhar com o banco H2 pela primeira vez, como utilizo para os meus estudos SGBDS "tradicionais"
 (Postgres e Mysql), num primeiro momento senti a diferença, pois com os SGBDS utilizo muito querys nativa,
@@ -53,46 +44,49 @@ Gostei da experiência de utilizar o h2, por  ser leve e poder ser integrado mui
 
 
 # Instalação e execução
-Para este projeto eu criei um script com uma boa quantidade de registros para teste, caso o teste seja realizado
-localmente o script pode ser excluído para verificar as respostas da api em caso de registros não encontrados (status code 404).
+Para este projeto eu criei um script com uma boa quantidade de registros para teste
 
-Para excluir o script em:
+O arquivo está em:
 
 
 src/main/resources/ 
 
 
-excluar o arquivo data.sql
+ data.sql
 
 
-Já para teste da api no heroku e pelo docker não é possível excluir o script diretamente,será necessário acessar o banco pela url.
-
-
-url do banco :
-
-
-http://localhost:8080/h2-ui/
 
 
 Obs: Altere  a JDBC URL  para : jdbc:h2:file:~/gerenciador;AUTO_SERVER=TRUE
 
+Caso deseje baixar ou clonar o projeto para teste, ou aprendizado, em: src/main/resources/application.properties
 
+
+Altere a variável :  ${USUARIO}  para  :   
+
+um nome de sua escolha
+
+
+Altere a variável : ${URL_BANCO} para  :   
+
+jdbc:h2:file:~/gerenciador;AUTO_SERVER=TRUE
+
+
+
+
+Para acessar o banco  após carregar o projeto
+
+Para acessar o banco  digite as informações abaixo no navegador :
+
+http://localhost:8080/h2-ui/
+
+
+insira as informações de usuario ( a que você escolheu) e insiria a url do banco (jdbc:h2:file:~/gerenciador;AUTO_SERVER=TRUE)
 Entre no banco , clicando em connect
 
-depois
 
 
-
-```mysql
-delete from endereco;
-
-
-delete from pessoa;
-```
-
-depois disto também poderá ser possível testar o status code 404 no docker e no heroku.
-
-Para  inserir novamente os dados copie e cole o script abaixo
+Abaixo está o script 
 
 
 
@@ -485,29 +479,18 @@ Resposta da Api
 ```
 
 
-# Testanto a api Com Docker ou Heroku
+# Funcionamento da  a api no Heroku
 
 
-Caso prefira realizar os teste sem baixar ou sem clonar o repositório
+Documentação
 
 
-
-Heroku
-
-
-https://beckend-attornatus.herokuapp.com/swagger-ui/index.html#/
+https://gerenciador-backend.herokuapp.com/swagger-ui/index.html#/
 
 
 
-Banco H2 Remoto 
 
-
-
-https://beckend-attornatus.herokuapp.com/h2-ui
-
-
-Obs: Altere  a JDBC URL  para : jdbc:h2:file:~/gerenciador;AUTO_SERVER=TRUE
-
+# Funcionamento da  a api com docker
 
 
 Caso prefira rodar a aplicação localmente pelo docker para teste:
@@ -547,7 +530,13 @@ http://localhost:8080/api/pessoa
 Url banco  : http://localhost:8080/h2-ui
 
 
-Obs: Altere  a JDBC URL  para : jdbc:h2:file:~/gerenciador;AUTO_SERVER=TRUE
+Altere  a JDBC URL  para : jdbc:h2:file:~/gerenciador;AUTO_SERVER=TRUE
+
+
+Altere  User Name para :  USUARIO senha_bd
+
+
+Obs: O dockerfile está configurado para rodar com as configurações acima 
 
 Url Swagger : http://localhost:8080/swagger-ui/index.html#/
 
