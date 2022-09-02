@@ -31,7 +31,12 @@ No front crie uma aplicação simples em angular para consumir os meus serviços
 Link do front :  https://rogerfreitas27.github.io/gerenciador-frontend/
 
 
-Link do código do front: 
+Link do código do front: https://github.com/rogerfreitas27/gerenciador-frontend/tree/master/src
+
+
+Obs: Após o deploy eu perdi parte dos arquivos, e estou refazendo parte do app, senda a parte que
+está no ar a mais completa.
+
 
 Nesta api pude trabalhar com o banco H2 pela primeira vez, como utilizo para os meus estudos SGBDS "tradicionais"
 (Postgres e Mysql), num primeiro momento senti a diferença, pois com os SGBDS utilizo muito querys nativa,
